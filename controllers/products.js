@@ -6,7 +6,7 @@ const getAllProducts = async (req, res) => {
     req.query
   );
 
-  // ------------------ search by comapny and name
+  // search by comapny and name
 
   const { company, name, featured, sort, select } = req.query;
   const queryObject = {};
@@ -16,7 +16,7 @@ const getAllProducts = async (req, res) => {
     queryObject.company = company; // { company: 'apple' } - queryObject.company
   }
 
-  // -------------- search name with regex
+  //  search name with regex
 
   //http://localhost:5000/api/products?name=apple
   if (name) {
