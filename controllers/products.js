@@ -11,21 +11,25 @@ const getAllProducts = async (req, res) => {
   const { company, name, featured, sort, select } = req.query;
   const queryObject = {};
 
+  //http://localhost:5000/api/products?company=apple
   if (company) {
     queryObject.company = company; // { company: 'apple' } - queryObject.company
   }
 
   // -------------- search name with regex
 
+  //http://localhost:5000/api/products?name=apple
   if (name) {
     queryObject.name = { $regex: name, $options: "i" }; // { name: 'apple' } - queryObject.name
   }
 
+  //http://localhost:5000/api/products?featured=true
   if (featured) {
-    queryObject.featured = compafeaturedny;
+    queryObject.featured = featured;
   }
 
   let apiData = Product.find(queryObject);
+
   //http://localhost:5000/api/products?sort=name,-price
 
   if (sort) {
