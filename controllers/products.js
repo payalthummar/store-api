@@ -27,6 +27,7 @@ const getAllProducts = async (req, res) => {
 
   let apiData = Product.find(queryObject);
   //http://localhost:5000/api/products?sort=name,-price
+
   if (sort) {
     let sortFix = sort.replace(",", " ");
     apiData = apiData.sort(sortFix);
@@ -79,7 +80,7 @@ const getAllProductsTesting = async (req, res) => {
   // sort=name,price;
 
   console.log(
-    "🚀 ~ file: product.js ~ line 2 ~ getAllProducts ~ req",
+    "🚀 ~ file: product.js ~ line 2 ~ getAllProductsTesting ~ req",
     req.query
   );
   res.status(200).json({ myData });
